@@ -22,6 +22,7 @@ const Header = () => {
                     <RiUserAddFill size={20}/>
                    Kayit Ol
                 </a>
+                
             </nav>
         </div>
     </div>
