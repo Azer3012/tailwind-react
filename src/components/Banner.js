@@ -4,8 +4,8 @@ const Banner = ({ banner }) => {
   const { id, image } = banner;
   return (
     <div>
-      <picture className="block px-2">
-        <img className="rounded-lg" src={image} alt={id} />
+      <picture className="block md:px-2">
+        <img className="md:rounded-lg" src={image} alt={id} />
       </picture>
     </div>
   );
