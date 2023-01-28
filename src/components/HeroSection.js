@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import Slider from "react-slick";
 import ReactFlagsSelect from "react-flags-select";
 import { FaFacebook } from "react-icons/fa";
+import { useWindowWidth } from "@react-hook/window-size";
 const HeroSection = () => {
+  const windowWidth = useWindowWidth();
   const [selected, setSelected] = useState("AZ");
   const phones = {
     US: "+1",
@@ -23,10 +25,10 @@ const HeroSection = () => {
   };
   return (
     <div className="relative before:bg-gradient-to-r before:from-primary-brand-color before:to-transparent before:absolute before:inset-0 before:w-full before:h-full before:z-10">
-      <Slider {...settings}>
+     { windowWidth>=768 && <Slider {...settings}>
         <div>
           <img
-            className="w-full h-[500px] object-cover"
+            className="w-full h-auto md:h-[500px] object-cover"
             src={require("../assets/1.jpg")}
           />
         </div>
@@ -36,9 +38,9 @@ const HeroSection = () => {
             src={require("../assets/2.jpg")}
           />
         </div>
-      </Slider>
-      <div className="container flex justify-between items-center absolute top-0 left-1/2 -translate-x-1/2 h-full z-20">
-        <div>
+      </Slider>}
+      <div className="md:container flex justify-between items-center relative md:absolute top-0 left-0 md:left-1/2 translate-x-0 md:-translate-x-1/2 h-full z-20">
+        <div className="hidden md:block">
           <img
             className="rounded-full object-cover w-[200px] h-[200px]"
             src={require("../assets/canabis.jpg")}
@@ -48,7 +50,7 @@ const HeroSection = () => {
             Kapinizda
           </h3>
         </div>
-        <div className="w-[400px] rounded-lg bg-gray-50 p-6">
+        <div className=" w-full md:w-[400px] md:rounded-lg bg-gray-50 p-6">
           <h4 className="text-primary-brand-color text-center font-semibold mb-4">
             Giris yap veya Kayit ol
           </h4>
