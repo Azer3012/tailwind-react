@@ -41,7 +41,7 @@ const Campaigns = () => {
   }, []);
 
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto py-2">
       <h3 className="text-sm font-semibold mb-3">Kampanyalar</h3>
 
       <Slider {...settings}>
